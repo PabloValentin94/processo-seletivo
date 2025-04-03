@@ -20,15 +20,23 @@
 
 }
 
+html {
+
+    scrollbar-color: var(--secondary-main-color) transparent;
+
+}
+
 body {
 
-    height: 100vh;
+    height: auto;
     width: 100vw;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--page-color);
-    padding: 15px;
+    padding: 20px;
+    overflow: hidden auto;
 
 }
 
@@ -42,12 +50,14 @@ body {
     background-color: transparent;
     border: 1px solid var(--primary-main-color);
     border-radius: 15px;
-    padding: 15px;
+    padding: 10px;
 
     /* Estilização para o H1 dentro desta DIV, no HTML. */
 
     & h1 {
 
+        color: var(--secondary-main-color);
+        text-shadow: 1px 1px 5px #000000;
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 35px;
@@ -106,7 +116,7 @@ body {
 
     }
 
-    /* Estilização do placeholder do input selecionado. */
+    /* Estilização dos placeholders dos inputs. */
 
     &::placeholder {
 
@@ -131,7 +141,7 @@ body {
 
 #form form #buttons button:nth-child(2) {
 
-    /* Estilização do botão "Limpar". */
+    /* Estilização do botão "RESET". */
 
     background-color: var(--primary-main-color);
     color: var(--page-color);
@@ -140,7 +150,7 @@ body {
 
 #form form #buttons button:nth-child(1), #form form #buttons:hover button:not(:hover) {
 
-    /* Estilização do botão "Salvar" e para quando o cursor do mouse estiver dentro 
+    /* Estilização do botão "SUBMIT" e para quando o cursor do mouse estiver dentro 
        da DIV "#buttons", mas não estiver sobre um botão (Oposto do ":hover".).  */
 
     background-color: transparent;
@@ -177,6 +187,35 @@ body {
         border-color: var(--secondary-main-color);
         color: var(--page-color);
         transition: 0s;
+
+    }
+
+}
+
+/* Responsividade. */
+
+@media (max-height: 500px) {
+
+    body {
+
+        align-items: flex-start;
+
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    #form form #buttons {
+
+        flex-direction: column-reverse;
+        gap: 15px;
+        
+    }
+
+    #form form #buttons button {
+
+        width: 100%;
 
     }
 
