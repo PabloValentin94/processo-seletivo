@@ -1,3 +1,16 @@
+/* Cores da página. */
+
+*:root {
+
+    --primary-main-color: #012F65;
+    --secondary-main-color: #09E0E2;
+    --page-color: #FFFFFF;
+    --neutral-color: #000000;
+
+}
+
+/* Estilização base. */
+
 * {
 
     box-sizing: border-box;
@@ -14,5 +27,157 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--page-color);
+    padding: 15px;
+
+}
+
+/* Estilização da DIV pai do formulário. */
+
+#form {
+
+    height: auto;
+    width: 500px;
+    max-width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--primary-main-color);
+    border-radius: 15px;
+    padding: 15px;
+
+    /* Estilização para o H1 dentro desta DIV, no HTML. */
+
+    & h1 {
+
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 35px;
+
+    }
+
+}
+
+/* Estilização do formulário. */
+
+#form form {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: transparent;
+
+}
+
+/* Estilização das labels do formulário. */
+
+#form form label {
+
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--neutral-color);
+    cursor: text;
+
+}
+
+/* Estilização dos inputs do formulário. */
+
+#form form input {
+
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary-main-color);
+    outline: none;
+    font-size: 17px;
+    color: var(--neutral-color);
+    padding: 7.5px 0 7.5px 0;
+    cursor: default;
+
+    /* Estilização para quando um input estiver selecionado. */
+
+    &:focus {
+
+        border-color: var(--secondary-main-color);
+        cursor: text;
+
+    }
+
+    /* Estilização do placeholder do input selecionado. */
+
+    &::placeholder {
+
+        color: #808080;
+        opacity: 0.75;
+
+    }
+
+}
+
+/* Estilização dos botões do formulário. */
+
+#form form #buttons {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 35px;
+
+}
+
+#form form #buttons button:nth-child(2) {
+
+    /* Estilização do botão "Limpar". */
+
+    background-color: var(--primary-main-color);
+    color: var(--page-color);
+
+}
+
+#form form #buttons button:nth-child(1), #form form #buttons:hover button:not(:hover) {
+
+    /* Estilização do botão "Salvar" e para quando o cursor do mouse estiver dentro 
+       da DIV "#buttons", mas não estiver sobre um botão (Oposto do ":hover".).  */
+
+    background-color: transparent;
+    color: var(--primary-main-color);
+
+}
+
+#form form #buttons button {
+
+    /* Estilização geral dos botões. */
+
+    width: 45%;
+    border: 1px solid var(--primary-main-color);
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: 0.75s;
+    cursor: pointer;
+
+    /* Estilização para quando um botão estiver com o cursor do mouse sobre si. */
+
+    &:hover {
+
+        background-color: var(--primary-main-color);
+        color: var(--page-color);
+
+    }
+
+    &:active {
+
+        background-color: var(--secondary-main-color);
+        border-color: var(--secondary-main-color);
+        color: var(--page-color);
+        transition: 0s;
+
+    }
 
 }
