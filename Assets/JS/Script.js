@@ -14,12 +14,26 @@ document.querySelector("form").onsubmit = function(event) {
 
     event.preventDefault();
 
-    console.log("Envio do formulário abortado.");
-
     alert(`\nNome informado: ${form_fields[0].value}.\n\nE-mail informado: ${form_fields[1].value}.\n\nSenha criada: ${form_fields[2].value}.`);
 
-    this.reset();
+};
 
-    console.clear();
+// Evento acionado toda vez que o botão "RESET" do formulário for apertado.
+
+document.querySelector("form").onreset = function(event) {
+
+    if(confirm("Realmente deseja redefinir o formulário? Os dados atuais serão perdidos."))
+    {
+
+        this.reset();
+
+    }
+
+    else
+    {
+
+        event.preventDefault();
+
+    }
 
 }
