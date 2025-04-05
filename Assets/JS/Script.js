@@ -22,14 +22,7 @@ document.querySelector("form").onsubmit = function(event) {
 
 document.querySelector("form").onreset = function(event) {
 
-    if(confirm("Realmente deseja redefinir o formulário? Os dados atuais serão perdidos."))
-    {
-
-        this.reset();
-
-    }
-
-    else
+    if(!confirm("Realmente deseja redefinir o formulário? Os dados atuais serão perdidos."))
     {
 
         event.preventDefault();
